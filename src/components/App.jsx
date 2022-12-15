@@ -44,6 +44,8 @@ export default class App extends React.Component {
           bad: prevState.bad + 1,
         }));
         break;
+      default:
+        console.log('some problem');
     }
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
