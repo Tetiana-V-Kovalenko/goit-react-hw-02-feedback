@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 const Section = ({ title, children }) => {
   return (
-    <section
-      style={{
-        margin: 8,
-      }}
-    >
+    <section>
       <h1>{title}</h1>
       {children}
     </section>
   );
+};
+Section.propTypes = {
+  title: PropTypes.string,
 };
 export default Section;
