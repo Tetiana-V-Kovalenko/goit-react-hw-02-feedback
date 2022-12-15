@@ -1,8 +1,13 @@
-const Section = () => {
+const Section = ({ title, children }) => {
   return (
-    <section>
-      {/* <FeedbackOptions/>
-        <Statistics /> */}
+    <section
+      style={{
+        margin: 8,
+      }}
+    >
+      <h1>{title}</h1>
+      {children}
     </section>
   );
 };
+export default Section;

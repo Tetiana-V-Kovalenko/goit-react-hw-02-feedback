@@ -1,16 +1,15 @@
 import css from './FeedbackOptions.module.css';
-const FeedbackOptions = () => {
+const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <div>
-      <h1 className={css.title}>Please leave feedback</h1>
       <div className={css.btn_container}>
-        <button className={css.btn} onClick={() => {}}>
+        <button name="good" className={css.btn} onClick={onLeaveFeedback}>
           Good
         </button>
-        <button className={css.btn} onClick={() => {}}>
+        <button name="neutral" className={css.btn} onClick={onLeaveFeedback}>
           Neutral
         </button>
-        <button className={css.btn} onClick={() => {}}>
+        <button name="bad" className={css.btn} onClick={onLeaveFeedback}>
           Bad
         </button>
       </div>
