@@ -16,15 +16,12 @@ export default class App extends React.Component {
   };
 
   countTotalFeedback = () => {
-    this.setState(prevState => ({
-      total: prevState.good + prevState.neutral + prevState.bad,
-    }));
+    return this.state.good + this.state.neutral + this.state.bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    this.setState(prevState => ({
-      positivePercentage: (prevState.good * 100) / prevState.total,
-    }));
+    const total = this.countTotalFeedback();
+    return (this.state.good * 100) / total;
   };
 
   incrementFeedback = event => {
@@ -47,11 +44,11 @@ export default class App extends React.Component {
       default:
         console.log('some problem');
     }
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
   };
 
   render() {
+    const total = this.countTotalFeedback();
+    const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
       <div>
         <Section title="Please leave feedback">
@@ -62,8 +59,8 @@ export default class App extends React.Component {
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
-            total={this.state.total}
-            positivePercentage={this.state.positivePercentage}
+            total={total}
+            positivePercentage={positivePercentage}
           />
         </Section>
       </div>
