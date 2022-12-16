@@ -1,7 +1,6 @@
 import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(options);
   return (
     <div>
       <div className={css.btn_container}>
